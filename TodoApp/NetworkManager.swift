@@ -10,7 +10,7 @@ import Foundation
 
 class NetworkManager {
     
-    enum NetworError: Error {
+    enum NetworkError: Error {
         case URLMalformed
         case NotReceivedData
         case JSONMalformed
@@ -53,7 +53,7 @@ class NetworkManager {
                                                    errorHandler: @escaping (Error) -> ()) {
         
         guard let url = URL(string: urlString, params: params) else {
-            errorHandler(NetworError.URLMalformed)
+            errorHandler(NetworkError.URLMalformed)
             return
         }
         
@@ -68,7 +68,6 @@ class NetworkManager {
             request.httpBody = requestObject
         }
         
-        
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             
             guard error == nil else {
@@ -78,14 +77,14 @@ class NetworkManager {
             
             
             guard let data = data, data.count > 0 else {
-                errorHandler(NetworError.NotReceivedData)
+                errorHandler(NetworkError.NotReceivedData)
                 return
             }
             
             guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else {
                 
                 print("Data received: \(String(data: data, encoding: String.Encoding.utf8) ?? "")")
-                errorHandler(NetworError.JSONMalformed)
+                errorHandler(NetworkError.JSONMalformed)
                 return
             }
             
