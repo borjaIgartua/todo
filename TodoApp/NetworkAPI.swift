@@ -8,17 +8,12 @@
 
 import Foundation
 
-class NetworkManager {
+class NetworkAPI: NetworkClient {
     
-    enum NetworkError: Error {
-        case URLMalformed
-        case NotReceivedData
-        case JSONMalformed
-    }
     
-    class func GET(urlString: String,
-                   successHandler: @escaping (Any) -> (),
-                   errorHandler: @escaping (Error) -> ()) {
+    func GET(urlString: String,
+             successHandler: @escaping SuccessHandler,
+             errorHandler: @escaping ErrorHandler) {
         
         self.performRequestWithURLString(urlString: urlString,
                                          params: nil,
@@ -29,10 +24,10 @@ class NetworkManager {
     }
 
     
-    class func POST(urlString: String,
+    func POST(urlString: String,
                     params: [String: Any],
-                    successHandler: @escaping (Any) -> (),
-                    errorHandler: @escaping (Error) -> ()) {
+                    successHandler: @escaping SuccessHandler,
+                    errorHandler: @escaping ErrorHandler) {
         
         let headers = ["Content-Type": "application/json", "Accept": "application/json"]
         
@@ -45,12 +40,12 @@ class NetworkManager {
     }
     
     
-    private class func performRequestWithURLString(urlString: String,
-                                                   params: [String: Any]?,
-                                                   httpHeaders: [String : String]?,
-                                                   httpMethod: String,
-                                                   successHandler: @escaping (Any) -> (),
-                                                   errorHandler: @escaping (Error) -> ()) {
+    private func performRequestWithURLString(urlString: String,
+                                             params: [String: Any]?,
+                                             httpHeaders: [String : String]?,
+                                             httpMethod: String,
+                                             successHandler: @escaping SuccessHandler,
+                                             errorHandler: @escaping ErrorHandler) {
         
         guard let url = URL(string: urlString, params: params) else {
             errorHandler(NetworkError.URLMalformed)

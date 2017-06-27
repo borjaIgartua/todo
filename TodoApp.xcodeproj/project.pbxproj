@@ -11,6 +11,11 @@
 		003FFF3C1ED8287B0067FA94 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FFF3B1ED8287B0067FA94 /* DictionaryExtension.swift */; };
 		003FFF3F1ED83C3E0067FA94 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FFF3D1ED83C3E0067FA94 /* TaskDetailViewController.swift */; };
 		003FFF401ED83C3E0067FA94 /* TaskDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003FFF3E1ED83C3E0067FA94 /* TaskDetailViewController.xib */; };
+		009110EF1F02638300DFE635 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009110EE1F02638300DFE635 /* NetworkClient.swift */; };
+		009110F11F02646D00DFE635 /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009110F01F02646D00DFE635 /* NetworkMock.swift */; };
+		009110F41F0269C300DFE635 /* tasks.json in Resources */ = {isa = PBXBuildFile; fileRef = 009110F31F0269C300DFE635 /* tasks.json */; };
+		009110F61F02721800DFE635 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009110F51F02721800DFE635 /* NetworkManager.swift */; };
+		009110F91F0272F800DFE635 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009110F81F0272F800DFE635 /* AppConfiguration.swift */; };
 		00D678A01ED5DB6000618F03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6789F1ED5DB6000618F03 /* AppDelegate.swift */; };
 		00D678A21ED5DB6000618F03 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D678A11ED5DB6000618F03 /* TodoTableViewController.swift */; };
 		00D678A51ED5DB6000618F03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D678A31ED5DB6000618F03 /* Main.storyboard */; };
@@ -20,7 +25,7 @@
 		00D678B81ED5DF6400618F03 /* TodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D678B61ED5DF6400618F03 /* TodoTableViewCell.xib */; };
 		00D678BA1ED5F1B900618F03 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D678B91ED5F1B900618F03 /* Task.swift */; };
 		00D678BE1ED5F50300618F03 /* TaskTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D678BD1ED5F50300618F03 /* TaskTableViewDataSource.swift */; };
-		00D678C01ED6041D00618F03 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D678BF1ED6041D00618F03 /* NetworkManager.swift */; };
+		00D678C01ED6041D00618F03 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D678BF1ED6041D00618F03 /* NetworkAPI.swift */; };
 		00D678C41ED60A4100618F03 /* TasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D678C31ED60A4100618F03 /* TasksInteractor.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +34,11 @@
 		003FFF3B1ED8287B0067FA94 /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		003FFF3D1ED83C3E0067FA94 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		003FFF3E1ED83C3E0067FA94 /* TaskDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskDetailViewController.xib; sourceTree = "<group>"; };
+		009110EE1F02638300DFE635 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		009110F01F02646D00DFE635 /* NetworkMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
+		009110F31F0269C300DFE635 /* tasks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tasks.json; sourceTree = "<group>"; };
+		009110F51F02721800DFE635 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		009110F81F0272F800DFE635 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		00D6789C1ED5DB6000618F03 /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D6789F1ED5DB6000618F03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D678A11ED5DB6000618F03 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +50,7 @@
 		00D678B61ED5DF6400618F03 /* TodoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodoTableViewCell.xib; sourceTree = "<group>"; };
 		00D678B91ED5F1B900618F03 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		00D678BD1ED5F50300618F03 /* TaskTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewDataSource.swift; sourceTree = "<group>"; };
-		00D678BF1ED6041D00618F03 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Network\U0010Manager.swift"; sourceTree = "<group>"; };
+		00D678BF1ED6041D00618F03 /* NetworkAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Network\U0010API.swift"; sourceTree = "<group>"; };
 		00D678C31ED60A4100618F03 /* TasksInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +74,33 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		009110ED1F02635900DFE635 /* IO */ = {
+			isa = PBXGroup;
+			children = (
+				00D678BF1ED6041D00618F03 /* NetworkAPI.swift */,
+				009110EE1F02638300DFE635 /* NetworkClient.swift */,
+				009110F01F02646D00DFE635 /* NetworkMock.swift */,
+				009110F51F02721800DFE635 /* NetworkManager.swift */,
+			);
+			name = IO;
+			sourceTree = "<group>";
+		};
+		009110F21F02649600DFE635 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				009110F31F0269C300DFE635 /* tasks.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		009110F71F0272EA00DFE635 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				009110F81F0272F800DFE635 /* AppConfiguration.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		00D678931ED5DB6000618F03 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +120,9 @@
 		00D6789E1ED5DB6000618F03 /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				009110F71F0272EA00DFE635 /* Core */,
+				009110F21F02649600DFE635 /* Resources */,
+				009110ED1F02635900DFE635 /* IO */,
 				003FFF3A1ED823800067FA94 /* Extensions */,
 				00D6789F1ED5DB6000618F03 /* AppDelegate.swift */,
 				00D678A11ED5DB6000618F03 /* TodoTableViewController.swift */,
@@ -94,7 +134,6 @@
 				00D678B61ED5DF6400618F03 /* TodoTableViewCell.xib */,
 				00D678B91ED5F1B900618F03 /* Task.swift */,
 				00D678BD1ED5F50300618F03 /* TaskTableViewDataSource.swift */,
-				00D678BF1ED6041D00618F03 /* NetworkManager.swift */,
 				00D678C31ED60A4100618F03 /* TasksInteractor.swift */,
 				003FFF3D1ED83C3E0067FA94 /* TaskDetailViewController.swift */,
 				003FFF3E1ED83C3E0067FA94 /* TaskDetailViewController.xib */,
@@ -163,6 +202,7 @@
 			files = (
 				003FFF401ED83C3E0067FA94 /* TaskDetailViewController.xib in Resources */,
 				00D678AA1ED5DB6000618F03 /* LaunchScreen.storyboard in Resources */,
+				009110F41F0269C300DFE635 /* tasks.json in Resources */,
 				00D678A71ED5DB6000618F03 /* Assets.xcassets in Resources */,
 				00D678A51ED5DB6000618F03 /* Main.storyboard in Resources */,
 				00D678B81ED5DF6400618F03 /* TodoTableViewCell.xib in Resources */,
@@ -179,12 +219,16 @@
 				00D678A21ED5DB6000618F03 /* TodoTableViewController.swift in Sources */,
 				00D678C41ED60A4100618F03 /* TasksInteractor.swift in Sources */,
 				00D678BE1ED5F50300618F03 /* TaskTableViewDataSource.swift in Sources */,
-				00D678C01ED6041D00618F03 /* NetworkManager.swift in Sources */,
+				009110F61F02721800DFE635 /* NetworkManager.swift in Sources */,
+				009110EF1F02638300DFE635 /* NetworkClient.swift in Sources */,
+				00D678C01ED6041D00618F03 /* NetworkAPI.swift in Sources */,
 				00D678A01ED5DB6000618F03 /* AppDelegate.swift in Sources */,
 				003FFF3C1ED8287B0067FA94 /* DictionaryExtension.swift in Sources */,
 				003FFF3F1ED83C3E0067FA94 /* TaskDetailViewController.swift in Sources */,
+				009110F11F02646D00DFE635 /* NetworkMock.swift in Sources */,
 				003FFF391ED8234A0067FA94 /* URLExtension.swift in Sources */,
 				00D678BA1ED5F1B900618F03 /* Task.swift in Sources */,
+				009110F91F0272F800DFE635 /* AppConfiguration.swift in Sources */,
 				00D678B71ED5DF6400618F03 /* TodoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

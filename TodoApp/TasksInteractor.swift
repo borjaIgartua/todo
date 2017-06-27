@@ -57,7 +57,7 @@ class TaskInteractor {
     
     private func getTasksFromServer() {
         
-        NetworkManager.GET(urlString: "http://demo1538413.mockable.io/tasks",
+        NetworkManager.shared.GET(urlString: "http://demo1538413.mockable.io/tasks",
                            successHandler: { (json) in
                             
                             if let dic = json as? [Any] {

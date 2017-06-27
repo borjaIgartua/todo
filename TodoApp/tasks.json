@@ -1,0 +1,27 @@
+ [
+  {
+  "title": "lavar la ropa",
+  "message": "lava la ropa so guarro",
+  "done": false
+  },
+  {
+  "title": "Llama a tu madre",
+  "message": "desgraciado",
+  "done": false
+  },
+  {
+  "title": "hacer la compra",
+  "message": "te vas a morir de hambre",
+  "done": false
+  },
+  {
+  "title": "Quedar con Patricia",
+  "message": "igual hasta hay suerte",
+  "done": true
+  },
+  {
+  "title": "Descargarme Tinder",
+  "message": "Ni suerte ni suerto",
+  "done": false
+  }
+  ]
