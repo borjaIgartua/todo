@@ -16,7 +16,7 @@ class NetworkManager {
     
     private init() {
         
-        if SIMULATE_HTTP_CONEXIONS {
+        if AppConfiguration.SIMULATE_HTTP_CONEXIONS {
             networkClient = NetworkMock()
             
         } else {

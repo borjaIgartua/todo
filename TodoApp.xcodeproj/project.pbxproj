@@ -11,6 +11,7 @@
 		003FFF3C1ED8287B0067FA94 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FFF3B1ED8287B0067FA94 /* DictionaryExtension.swift */; };
 		003FFF3F1ED83C3E0067FA94 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FFF3D1ED83C3E0067FA94 /* TaskDetailViewController.swift */; };
 		003FFF401ED83C3E0067FA94 /* TaskDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003FFF3E1ED83C3E0067FA94 /* TaskDetailViewController.xib */; };
+		0048D7D31F1DF68200C81C5E /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7D21F1DF68200C81C5E /* NetworkConstants.swift */; };
 		009110EF1F02638300DFE635 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009110EE1F02638300DFE635 /* NetworkClient.swift */; };
 		009110F11F02646D00DFE635 /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009110F01F02646D00DFE635 /* NetworkMock.swift */; };
 		009110F41F0269C300DFE635 /* tasks.json in Resources */ = {isa = PBXBuildFile; fileRef = 009110F31F0269C300DFE635 /* tasks.json */; };
@@ -34,6 +35,7 @@
 		003FFF3B1ED8287B0067FA94 /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		003FFF3D1ED83C3E0067FA94 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		003FFF3E1ED83C3E0067FA94 /* TaskDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskDetailViewController.xib; sourceTree = "<group>"; };
+		0048D7D21F1DF68200C81C5E /* NetworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		009110EE1F02638300DFE635 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		009110F01F02646D00DFE635 /* NetworkMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
 		009110F31F0269C300DFE635 /* tasks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tasks.json; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				009110EE1F02638300DFE635 /* NetworkClient.swift */,
 				009110F01F02646D00DFE635 /* NetworkMock.swift */,
 				009110F51F02721800DFE635 /* NetworkManager.swift */,
+				0048D7D21F1DF68200C81C5E /* NetworkConstants.swift */,
 			);
 			name = IO;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				009110F11F02646D00DFE635 /* NetworkMock.swift in Sources */,
 				003FFF391ED8234A0067FA94 /* URLExtension.swift in Sources */,
 				00D678BA1ED5F1B900618F03 /* Task.swift in Sources */,
+				0048D7D31F1DF68200C81C5E /* NetworkConstants.swift in Sources */,
 				009110F91F0272F800DFE635 /* AppConfiguration.swift in Sources */,
 				00D678B71ED5DF6400618F03 /* TodoTableViewCell.swift in Sources */,
 			);
