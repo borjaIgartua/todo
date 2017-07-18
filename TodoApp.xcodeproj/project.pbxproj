@@ -12,6 +12,13 @@
 		003FFF3F1ED83C3E0067FA94 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FFF3D1ED83C3E0067FA94 /* TaskDetailViewController.swift */; };
 		003FFF401ED83C3E0067FA94 /* TaskDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003FFF3E1ED83C3E0067FA94 /* TaskDetailViewController.xib */; };
 		0048D7D31F1DF68200C81C5E /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7D21F1DF68200C81C5E /* NetworkConstants.swift */; };
+		0048D7DB1F1DFD8500C81C5E /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7DA1F1DFD8500C81C5E /* LoginInteractor.swift */; };
+		0048D7DD1F1DFF8200C81C5E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7DC1F1DFF8200C81C5E /* User.swift */; };
+		0048D7DF1F1E052700C81C5E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7DE1F1E052700C81C5E /* Session.swift */; };
+		0048D7E11F1E07C000C81C5E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7E01F1E07C000C81C5E /* LoginViewController.swift */; };
+		0048D7E41F1E0CD800C81C5E /* UITextField+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7E31F1E0CD800C81C5E /* UITextField+Animations.swift */; };
+		0048D7E61F1E0CF600C81C5E /* UIColor+Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7E51F1E0CF600C81C5E /* UIColor+Todo.swift */; };
+		0048D7E81F1E0E8700C81C5E /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7E71F1E0E8700C81C5E /* String+Utilities.swift */; };
 		009110EF1F02638300DFE635 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009110EE1F02638300DFE635 /* NetworkClient.swift */; };
 		009110F11F02646D00DFE635 /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009110F01F02646D00DFE635 /* NetworkMock.swift */; };
 		009110F41F0269C300DFE635 /* tasks.json in Resources */ = {isa = PBXBuildFile; fileRef = 009110F31F0269C300DFE635 /* tasks.json */; };
@@ -36,6 +43,13 @@
 		003FFF3D1ED83C3E0067FA94 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		003FFF3E1ED83C3E0067FA94 /* TaskDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskDetailViewController.xib; sourceTree = "<group>"; };
 		0048D7D21F1DF68200C81C5E /* NetworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		0048D7DA1F1DFD8500C81C5E /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		0048D7DC1F1DFF8200C81C5E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0048D7DE1F1E052700C81C5E /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		0048D7E01F1E07C000C81C5E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0048D7E31F1E0CD800C81C5E /* UITextField+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Animations.swift"; sourceTree = "<group>"; };
+		0048D7E51F1E0CF600C81C5E /* UIColor+Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Todo.swift"; sourceTree = "<group>"; };
+		0048D7E71F1E0E8700C81C5E /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
 		009110EE1F02638300DFE635 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		009110F01F02646D00DFE635 /* NetworkMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
 		009110F31F0269C300DFE635 /* tasks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tasks.json; sourceTree = "<group>"; };
@@ -79,6 +93,7 @@
 		0048D7D41F1DF8FA00C81C5E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0048D7D91F1DFACA00C81C5E /* Login */,
 				0048D7D71F1DF98400C81C5E /* TaskDetail */,
 				0048D7D51F1DF90A00C81C5E /* Tasks */,
 			);
@@ -99,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				00D678B91ED5F1B900618F03 /* Task.swift */,
+				0048D7DC1F1DFF8200C81C5E /* User.swift */,
 			);
 			name = Entitites;
 			sourceTree = "<group>";
@@ -120,6 +136,25 @@
 				00D678A11ED5DB6000618F03 /* TodoTableViewController.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		0048D7D91F1DFACA00C81C5E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0048D7DA1F1DFD8500C81C5E /* LoginInteractor.swift */,
+				0048D7E01F1E07C000C81C5E /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		0048D7E21F1E0CBC00C81C5E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0048D7E31F1E0CD800C81C5E /* UITextField+Animations.swift */,
+				0048D7E51F1E0CF600C81C5E /* UIColor+Todo.swift */,
+				0048D7E71F1E0E8700C81C5E /* String+Utilities.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		009110ED1F02635900DFE635 /* IO */ = {
@@ -146,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				009110F81F0272F800DFE635 /* AppConfiguration.swift */,
+				0048D7DE1F1E052700C81C5E /* Session.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -169,6 +205,7 @@
 		00D6789E1ED5DB6000618F03 /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				0048D7E21F1E0CBC00C81C5E /* Extensions */,
 				0048D7D61F1DF91900C81C5E /* Entitites */,
 				0048D7D41F1DF8FA00C81C5E /* Modules */,
 				009110F71F0272EA00DFE635 /* Core */,
@@ -259,14 +296,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0048D7E61F1E0CF600C81C5E /* UIColor+Todo.swift in Sources */,
 				00D678A21ED5DB6000618F03 /* TodoTableViewController.swift in Sources */,
 				00D678C41ED60A4100618F03 /* TasksInteractor.swift in Sources */,
 				00D678BE1ED5F50300618F03 /* TaskTableViewDataSource.swift in Sources */,
 				009110F61F02721800DFE635 /* NetworkManager.swift in Sources */,
+				0048D7E81F1E0E8700C81C5E /* String+Utilities.swift in Sources */,
+				0048D7E11F1E07C000C81C5E /* LoginViewController.swift in Sources */,
+				0048D7DB1F1DFD8500C81C5E /* LoginInteractor.swift in Sources */,
 				009110EF1F02638300DFE635 /* NetworkClient.swift in Sources */,
 				00D678C01ED6041D00618F03 /* NetworkAPI.swift in Sources */,
+				0048D7DD1F1DFF8200C81C5E /* User.swift in Sources */,
+				0048D7DF1F1E052700C81C5E /* Session.swift in Sources */,
 				00D678A01ED5DB6000618F03 /* AppDelegate.swift in Sources */,
 				003FFF3C1ED8287B0067FA94 /* DictionaryExtension.swift in Sources */,
+				0048D7E41F1E0CD800C81C5E /* UITextField+Animations.swift in Sources */,
 				003FFF3F1ED83C3E0067FA94 /* TaskDetailViewController.swift in Sources */,
 				009110F11F02646D00DFE635 /* NetworkMock.swift in Sources */,
 				003FFF391ED8234A0067FA94 /* URLExtension.swift in Sources */,
