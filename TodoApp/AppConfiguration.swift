@@ -8,4 +8,6 @@
 
 import Foundation
 
-let SIMULATE_HTTP_CONEXIONS = true
+struct AppConfiguration {
+    static let SIMULATE_HTTP_CONEXIONS = true
+}
