@@ -19,6 +19,7 @@
 		0048D7E41F1E0CD800C81C5E /* UITextField+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7E31F1E0CD800C81C5E /* UITextField+Animations.swift */; };
 		0048D7E61F1E0CF600C81C5E /* UIColor+Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7E51F1E0CF600C81C5E /* UIColor+Todo.swift */; };
 		0048D7E81F1E0E8700C81C5E /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7E71F1E0E8700C81C5E /* String+Utilities.swift */; };
+		0048D7EA1F1E6B4800C81C5E /* TaskDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7E91F1E6B4800C81C5E /* TaskDetailInteractor.swift */; };
 		009110EF1F02638300DFE635 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009110EE1F02638300DFE635 /* NetworkClient.swift */; };
 		009110F11F02646D00DFE635 /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009110F01F02646D00DFE635 /* NetworkMock.swift */; };
 		009110F41F0269C300DFE635 /* tasks.json in Resources */ = {isa = PBXBuildFile; fileRef = 009110F31F0269C300DFE635 /* tasks.json */; };
@@ -50,6 +51,7 @@
 		0048D7E31F1E0CD800C81C5E /* UITextField+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Animations.swift"; sourceTree = "<group>"; };
 		0048D7E51F1E0CF600C81C5E /* UIColor+Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Todo.swift"; sourceTree = "<group>"; };
 		0048D7E71F1E0E8700C81C5E /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
+		0048D7E91F1E6B4800C81C5E /* TaskDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailInteractor.swift; sourceTree = "<group>"; };
 		009110EE1F02638300DFE635 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		009110F01F02646D00DFE635 /* NetworkMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
 		009110F31F0269C300DFE635 /* tasks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tasks.json; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				003FFF3D1ED83C3E0067FA94 /* TaskDetailViewController.swift */,
 				003FFF3E1ED83C3E0067FA94 /* TaskDetailViewController.xib */,
+				0048D7E91F1E6B4800C81C5E /* TaskDetailInteractor.swift */,
 			);
 			name = TaskDetail;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				003FFF391ED8234A0067FA94 /* URLExtension.swift in Sources */,
 				00D678BA1ED5F1B900618F03 /* Task.swift in Sources */,
 				0048D7D31F1DF68200C81C5E /* NetworkConstants.swift in Sources */,
+				0048D7EA1F1E6B4800C81C5E /* TaskDetailInteractor.swift in Sources */,
 				009110F91F0272F800DFE635 /* AppConfiguration.swift in Sources */,
 				00D678B71ED5DF6400618F03 /* TodoTableViewCell.swift in Sources */,
 			);

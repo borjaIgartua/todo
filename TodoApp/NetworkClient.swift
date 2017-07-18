@@ -20,11 +20,16 @@ enum NetworkError: Error {
 protocol NetworkClient {
     
     func GET(urlString: String,
-             successHandler: @escaping SuccessHandler,
-             errorHandler: @escaping ErrorHandler)
+             successHandler: SuccessHandler?,
+             errorHandler: ErrorHandler?)
     
     func POST(urlString: String,
               params: [String: Any],
-              successHandler: @escaping SuccessHandler,
-              errorHandler: @escaping ErrorHandler)
+              successHandler: SuccessHandler?,
+              errorHandler: ErrorHandler?)
+    
+    func PUT(urlString: String,
+              params: [String: Any],
+              successHandler: SuccessHandler?,
+              errorHandler: ErrorHandler?)
 }

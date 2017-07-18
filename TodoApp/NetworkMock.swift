@@ -11,29 +11,41 @@ import Foundation
 class NetworkMock: NetworkClient {
     
     func GET(urlString: String,
-                    successHandler: @escaping SuccessHandler,
-                    errorHandler: @escaping ErrorHandler) {
+                    successHandler: SuccessHandler?,
+                    errorHandler: ErrorHandler?) {
         
         self.readFile(urlString, successHandler: successHandler, errorHandler: errorHandler)        
     }
     
     func POST(urlString: String,
                      params: [String: Any],
-                     successHandler: @escaping SuccessHandler,
-                     errorHandler: @escaping ErrorHandler) {
+                     successHandler: SuccessHandler?,
+                     errorHandler: ErrorHandler?) {
+        
+        self.readFile(urlString, successHandler: successHandler, errorHandler: errorHandler)
+    }
+    
+    func PUT(urlString: String,
+              params: [String: Any],
+              successHandler: SuccessHandler?,
+              errorHandler: ErrorHandler?) {
         
         self.readFile(urlString, successHandler: successHandler, errorHandler: errorHandler)
     }
     
     
     func readFile(_ filename: String,
-                  successHandler: @escaping SuccessHandler,
-                  errorHandler: @escaping ErrorHandler) {
+                  successHandler: SuccessHandler?,
+                  errorHandler: ErrorHandler?) {
+        
+        var userInfo:[String:Any] = ["file": filename]
+        userInfo["success"] = successHandler
+        userInfo["failure"] = errorHandler
         
         let timer = Timer(timeInterval: 1.0,
                           target: self,
                           selector: #selector(NetworkMock.readFileWithTimer(_:)),
-                          userInfo: ["file": filename, "success": successHandler, "failure": errorHandler],
+                          userInfo: userInfo,
                           repeats: false)
         
         RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
@@ -45,8 +57,8 @@ class NetworkMock: NetworkClient {
         if let userInfo = timer.userInfo as? [String: Any] {
             
             let filename = userInfo["file"] as! String
-            let successHandler = userInfo["success"] as! SuccessHandler
-            let errorHandler = userInfo["failure"] as! ErrorHandler
+            let successHandler = userInfo["success"] as? SuccessHandler
+            let errorHandler = userInfo["failure"] as? ErrorHandler
             
             
             if let filePath = Bundle.main.path(forResource: filename, ofType: "json") {
@@ -58,14 +70,14 @@ class NetworkMock: NetworkClient {
                         let responseObject = try JSONSerialization.jsonObject(with: contentData,
                                                                               options: JSONSerialization.ReadingOptions.mutableContainers)
                         
-                        successHandler(responseObject)
+                        successHandler?(responseObject)
                         
                     } else {
                         throw NetworkError.JSONMalformed
                     }
                     
                 } catch let error {
-                    errorHandler(error)
+                    errorHandler?(error)
                 }
             }
         }

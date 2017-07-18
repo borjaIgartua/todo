@@ -12,9 +12,13 @@ class TaskTableViewDataSource: NSObject, UITableViewDataSource {
     unowned var tableView: UITableView
     var dataSource: [Task]
     
-    init(tableView: UITableView, dataSource: [Task]) {
+    typealias UpdateTaskHandler = (Task) -> ()
+    var updateTaskHandler: UpdateTaskHandler?
+    
+    init(tableView: UITableView, dataSource: [Task], updateTaskHandler: UpdateTaskHandler? = nil) {
         self.tableView = tableView
         self.dataSource = dataSource
+        self.updateTaskHandler = updateTaskHandler
         super.init()
         
         self.tableView.dataSource = self
@@ -25,6 +29,7 @@ class TaskTableViewDataSource: NSObject, UITableViewDataSource {
     //MARK: - Helper methods
     
     func addTask(_ task: Task) {
+        
         self.dataSource.append(task)
         let indexPath = IndexPath(row: self.dataSource.endIndex - 1, section: 0)
         self.tableView.insertRows(at: [indexPath], with: UITableViewRowAnimation.left)
@@ -51,6 +56,7 @@ class TaskTableViewDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCellIdentifier", for: indexPath) as! TodoTableViewCell
         cell.fillWithTitle(dataSource[indexPath.row].title, done: dataSource[indexPath.row].done) { [unowned self] (done) in
             self.dataSource[indexPath.row].done = done
+            self.updateTaskHandler?(self.dataSource[indexPath.row])
         }
         return cell
     }

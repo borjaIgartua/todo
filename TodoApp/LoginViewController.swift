@@ -29,6 +29,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         alertController.addTextField { (textField) in
             textField.placeholder = "password"
             textField.delegate = self
+            textField.isSecureTextEntry = true
         }
         
         let addAction = UIAlertAction(title: "Login", style: .default) { [unowned self] (action) in
@@ -87,6 +88,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         alertController.addTextField { (textField) in
             textField.placeholder = "password"
             textField.delegate = self
+            textField.isSecureTextEntry = true
         }
         alertController.addTextField { (textField) in
             textField.placeholder = "email"

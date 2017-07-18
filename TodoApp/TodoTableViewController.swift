@@ -25,9 +25,14 @@ class TodoTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 44
         
         
-        taskDataSource = TaskTableViewDataSource(tableView: self.tableView, dataSource: [])
+        taskDataSource = TaskTableViewDataSource(tableView: self.tableView,
+                                                 dataSource: [],
+                                                 updateTaskHandler: { [weak interactor = self.taskInteractor] (task) in
+                                                    
+                                                    interactor?.updateTask(task)
+            
+        })
         self.tableView.delegate = self
-        
         
         taskInteractor.retrieveTasks { [unowned self] (tasks) in
             if let tasks = tasks {
@@ -62,11 +67,20 @@ class TodoTableViewController: UITableViewController {
             textField.placeholder = "introduce una tarea"
         }
         
-        let addAction = UIAlertAction(title: "añadir", style: .default) { (action) in
+        let addAction = UIAlertAction(title: "añadir", style: .default) { [unowned self] (action) in
             alertController.dismiss(animated: true, completion: nil)
             
             if let taskTitle = alertController.textFields?.last?.text {
-                self.taskDataSource?.addTask(Task(title: taskTitle, message: nil))
+                
+                let task = Task(title: taskTitle, message: nil)
+                self.taskInteractor.addTask(task, successHandler: { [unowned self] (task) in
+                    
+                    DispatchQueue.main.async {
+                            self.taskDataSource?.addTask(task)
+                    }                    
+                }, errorHandler: { (error) in
+                    //TODO: show error
+                })                
             }
         }
         

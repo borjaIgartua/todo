@@ -27,8 +27,8 @@ class NetworkManager {
     //MARK: - Utils
     
     func GET(urlString: String,
-             successHandler: @escaping SuccessHandler,
-             errorHandler: @escaping ErrorHandler) {
+             successHandler: SuccessHandler?,
+             errorHandler: ErrorHandler?) {
         
         self.networkClient.GET(urlString: urlString,
                                successHandler: successHandler,
@@ -37,12 +37,23 @@ class NetworkManager {
     
     func POST(urlString: String,
               params: [String: Any],
-              successHandler: @escaping SuccessHandler,
-              errorHandler: @escaping ErrorHandler) {
+              successHandler: SuccessHandler?,
+              errorHandler: ErrorHandler?) {
      
         self.networkClient.POST(urlString: urlString,
                                 params: params,
                                 successHandler: successHandler,
                                 errorHandler: errorHandler)
+    }
+    
+    func PUT(urlString: String,
+             params: [String: Any],
+             successHandler: SuccessHandler?,
+             errorHandler: ErrorHandler?) {
+        
+        self.networkClient.PUT(urlString: urlString,
+                               params: params,
+                               successHandler: successHandler,
+                               errorHandler: errorHandler)
     }
 }

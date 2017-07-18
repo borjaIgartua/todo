@@ -22,16 +22,20 @@ class TaskDetailViewController: UIViewController {
     
     @IBOutlet weak var safeButton: UIButton!
     
+    var taskDetailInteractor: TaskDetailInteractor
+    
     var task: Task?
     var editingTask = false
     
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, task: inout Task) {
         self.task = task
+        self.taskDetailInteractor = TaskDetailInteractor()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     required init?(coder aDecoder: NSCoder) {
+        self.taskDetailInteractor = TaskDetailInteractor()
         super.init(coder: aDecoder)
     }
     
@@ -115,6 +119,8 @@ class TaskDetailViewController: UIViewController {
             self.statusLabel.text = (task?.done ?? false) ? "Tarea realizada" : "Por hacer"
             
             self.makeTaskEditable()
+            
+            taskDetailInteractor.updateTask(task)
             
         } else {
             //TODO: show error no task without title

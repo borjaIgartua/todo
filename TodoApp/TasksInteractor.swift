@@ -45,6 +45,30 @@ class TaskInteractor {
         
     }
     
+    func updateTask(_ task: Task) {
+        
+        NetworkManager.shared.PUT(urlString: NetworkConstants.UPDATE_TASKS_OPERATION,
+                                  params: task.params,
+                                  successHandler: nil) { (error) in
+            //TODO: undone the task
+        }
+    }
+    
+    func addTask(_ task: Task, successHandler: @escaping (Task) -> (), errorHandler: @escaping (Error) -> ()) {
+        
+        NetworkManager.shared.POST(urlString: NetworkConstants.REGISTER_TASKS_OPERATION,
+                                   params:task.params,
+                                   successHandler: { (json) in
+                                    
+                                    if let dic = json as? [String: Any], let task = Task(dic) {
+                                        successHandler(task);
+                                        
+                                    } else {
+                                        errorHandler(NetworkError.NotReceivedData)
+                                    }
+        }, errorHandler: errorHandler)
+    }
+    
     private func getTaskFromPersistence() -> [Task]? {
         
         guard let data = UserDefaults.standard.data(forKey: "tasks_key") else {
