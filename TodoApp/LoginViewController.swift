@@ -33,12 +33,33 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         let addAction = UIAlertAction(title: "Login", style: .default) { [unowned self] (action) in
             
-            
             if let username = alertController.textFields?[0].text, username.length > 0 {
-                
                 if let password = alertController.textFields?[1].text, password.length > 0 {
                     self.showingAlert = nil
-
+                    self.loginInteractor.login(username: username,
+                                               password: password,
+                                               successHandler: {
+                                                
+                                                DispatchQueue.main.async {
+                                                
+                                                    if let window = UIApplication.shared.keyWindow {
+                                                        let navController = self.storyboard?.instantiateViewController(withIdentifier: "tasksNavigationController");
+                                                        
+                                                        UIView.transition(with: window,
+                                                                          duration: 0.4,
+                                                                          options: .transitionFlipFromLeft,
+                                                                          animations: { [weak window] in
+                                                                            
+                                                                            window?.rootViewController = navController
+                                                                            
+                                                        }, completion: nil)
+                                                    }
+                                                }
+                        
+                    }, errorHandler: { (error) in
+                        //TODO: show error
+                        print(error)
+                    })
                 }
             }
         }
@@ -74,9 +95,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         let addAction = UIAlertAction(title: "Signup", style: .default) { [unowned self] (action) in
             
-            
             if let username = alertController.textFields?[0].text, username.length > 0 {
-                
                 if let password = alertController.textFields?[1].text, password.length > 0 {
                     
                     self.showingAlert = nil
@@ -84,10 +103,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self.loginInteractor.signup(username: username,
                                                 password: password,
                                                 email: email,
-                                                successHandler: { (user) in
-                        
+                                                successHandler: {
+                                                    
+                                                    DispatchQueue.main.async {
+                                                        
+                                                        if let window = UIApplication.shared.keyWindow {
+                                                            let navController = self.storyboard?.instantiateViewController(withIdentifier: "tasksNavigationController");
+                                                            
+                                                            UIView.transition(with: window,
+                                                                              duration: 0.4,
+                                                                              options: .transitionFlipFromLeft,
+                                                                              animations: { [weak window] in
+                                                                                
+                                                                                window?.rootViewController = navController
+                                                                                
+                                                                }, completion: nil)
+                                                        }
+                                                        
+                                                    }
                     }, errorHandler: { (error) in
-                        
+                        print(error)
                     })
                 }
             }

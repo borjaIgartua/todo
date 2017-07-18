@@ -14,4 +14,6 @@ class Session {
     
     private init() {
     }
+    
+    var user: User?
 }

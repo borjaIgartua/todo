@@ -10,24 +10,37 @@ import Foundation
 
 struct LoginInteractor {
  
-    func login() {
+    func login(username: String, password: String, successHandler: @escaping () -> (), errorHandler: @escaping (Error) -> ()) {
         
-//        NetworkManager.shared.POST(urlString: NetworkConstants.LOGIN_OPERATION, params: <#T##[String : Any]#>, successHandler: <#T##SuccessHandler##SuccessHandler##(Any) -> ()#>, errorHandler: <#T##ErrorHandler##ErrorHandler##(Error) -> ()#>)
+        NetworkManager.shared.POST(urlString: NetworkConstants.LOGIN_OPERATION,
+                                   params: ["username" : username, "password": password],
+                                   successHandler: { (json) in
+            
+                                    if let user = User(dic: json as! [String : Any]) {
+                                        Session.shared.user = user
+                                        successHandler()
+
+                                    } else {
+                                        errorHandler(NetworkError.NotReceivedData)
+                                    }
+            
+        }, errorHandler: errorHandler)
     }
     
-    func signup(username: String, password: String, email: String?, successHandler: (User) -> (), errorHandler: @escaping (Error) -> ()) {
+    func signup(username: String, password: String, email: String?, successHandler: @escaping () -> (), errorHandler: @escaping (Error) -> ()) {
         
-//        NetworkManager.shared.POST(urlString: NetworkConstants.SIGNUP_OPERATION,
-//                                   params: ["username" : username, "password": password, "email": email ?? ""],
-//                                   successHandler: { (json) in
-//                                    
-//                                    if let user = User(dic: json as! [String : Any]) {
-//                                        print(user)
-//                                        
-//                                    } else {
-//                                        errorHandler(NetworkError.NotReceivedData)
-//                                    }
-//            
-//        }, errorHandler: errorHandler)
+        NetworkManager.shared.POST(urlString: NetworkConstants.SIGNUP_OPERATION,
+                                   params: ["username" : username, "password": password, "email": email ?? ""],
+                                   successHandler: { (json) in
+                                    
+                                    if let user = User(dic: json as! [String : Any]) {
+                                        Session.shared.user = user
+                                        successHandler()
+                                        
+                                    } else {
+                                        errorHandler(NetworkError.NotReceivedData)
+                                    }
+            
+        }, errorHandler: errorHandler)
     }
 }

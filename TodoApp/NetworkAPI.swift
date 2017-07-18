@@ -47,9 +47,20 @@ class NetworkAPI: NetworkClient {
                                              successHandler: @escaping SuccessHandler,
                                              errorHandler: @escaping ErrorHandler) {
         
-        guard let url = URL(string: urlString, params: params) else {
-            errorHandler(NetworkError.URLMalformed)
-            return
+        var url: URL
+        if httpMethod == "GET" {
+            guard let formattedUrl = URL(string: urlString, params: params) else {
+                errorHandler(NetworkError.URLMalformed)
+                return
+            }
+            url = formattedUrl
+        } else {
+            
+            guard let formattedUrl = URL(string: urlString) else {
+                errorHandler(NetworkError.URLMalformed)
+                return
+            }
+            url = formattedUrl
         }
         
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 5.0)
