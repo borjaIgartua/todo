@@ -22,7 +22,7 @@ class TaskDetailViewController: UIViewController {
     
     @IBOutlet weak var safeButton: UIButton!
     
-    var task: Task
+    var task: Task?
     var editingTask = false
     
     
@@ -32,7 +32,7 @@ class TaskDetailViewController: UIViewController {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     deinit {
@@ -44,9 +44,9 @@ class TaskDetailViewController: UIViewController {
         
         self.updateEditableButton(editing: editingTask)
         
-        self.titleLabel.text = task.title
-        self.messageLabel.text = task.message
-        self.statusLabel.text = task.done ? "Tarea realizada" : "Por hacer"
+        self.titleLabel.text = task?.title
+        self.messageLabel.text = task?.message
+        self.statusLabel.text = (task?.done ?? false) ? "Tarea realizada" : "Por hacer"
         
     }
     
@@ -77,9 +77,9 @@ class TaskDetailViewController: UIViewController {
             
             if self.editingTask {
                 
-                self.titleTextField.text = self.task.title
-                self.messageTextField.text = self.task.message
-                self.statusSwitch.setOn(self.task.done, animated: true)
+                self.titleTextField.text = self.task?.title
+                self.messageTextField.text = self.task?.message
+                self.statusSwitch.setOn((self.task?.done ?? false), animated: true)
                 
                 self.titleLabel.alpha = 0.0
                 self.messageLabel.alpha = 0.0
@@ -106,13 +106,13 @@ class TaskDetailViewController: UIViewController {
         
         if let taskTitle = titleTextField.text {
             
-            task.title = taskTitle
-            task.message = messageTextField.text
-            task.done = statusSwitch.isOn
+            task?.title = taskTitle
+            task?.message = messageTextField.text
+            task?.done = statusSwitch.isOn
             
-            self.titleLabel.text = task.title
-            self.messageLabel.text = task.message
-            self.statusLabel.text = task.done ? "Tarea realizada" : "Por hacer"
+            self.titleLabel.text = task?.title
+            self.messageLabel.text = task?.message
+            self.statusLabel.text = (task?.done ?? false) ? "Tarea realizada" : "Por hacer"
             
             self.makeTaskEditable()
             
@@ -124,7 +124,7 @@ class TaskDetailViewController: UIViewController {
     
     @IBAction func statusSwichChanged(_ sender: Any) {
         
-        task.done = statusSwitch.isOn
-        self.statusLabel.text = task.done ? "Tarea realizada" : "Por hacer"
+        task?.done = statusSwitch.isOn
+        self.statusLabel.text = (task?.done ?? false) ? "Tarea realizada" : "Por hacer"
     }
 }

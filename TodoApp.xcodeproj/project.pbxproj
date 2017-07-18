@@ -76,6 +76,52 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		0048D7D41F1DF8FA00C81C5E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0048D7D71F1DF98400C81C5E /* TaskDetail */,
+				0048D7D51F1DF90A00C81C5E /* Tasks */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		0048D7D51F1DF90A00C81C5E /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				0048D7D81F1DF9A100C81C5E /* Views */,
+				00D678BD1ED5F50300618F03 /* TaskTableViewDataSource.swift */,
+				00D678C31ED60A4100618F03 /* TasksInteractor.swift */,
+			);
+			name = Tasks;
+			sourceTree = "<group>";
+		};
+		0048D7D61F1DF91900C81C5E /* Entitites */ = {
+			isa = PBXGroup;
+			children = (
+				00D678B91ED5F1B900618F03 /* Task.swift */,
+			);
+			name = Entitites;
+			sourceTree = "<group>";
+		};
+		0048D7D71F1DF98400C81C5E /* TaskDetail */ = {
+			isa = PBXGroup;
+			children = (
+				003FFF3D1ED83C3E0067FA94 /* TaskDetailViewController.swift */,
+				003FFF3E1ED83C3E0067FA94 /* TaskDetailViewController.xib */,
+			);
+			name = TaskDetail;
+			sourceTree = "<group>";
+		};
+		0048D7D81F1DF9A100C81C5E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				00D678B51ED5DF6400618F03 /* TodoTableViewCell.swift */,
+				00D678B61ED5DF6400618F03 /* TodoTableViewCell.xib */,
+				00D678A11ED5DB6000618F03 /* TodoTableViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		009110ED1F02635900DFE635 /* IO */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,23 +169,17 @@
 		00D6789E1ED5DB6000618F03 /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				0048D7D61F1DF91900C81C5E /* Entitites */,
+				0048D7D41F1DF8FA00C81C5E /* Modules */,
 				009110F71F0272EA00DFE635 /* Core */,
 				009110F21F02649600DFE635 /* Resources */,
 				009110ED1F02635900DFE635 /* IO */,
 				003FFF3A1ED823800067FA94 /* Extensions */,
 				00D6789F1ED5DB6000618F03 /* AppDelegate.swift */,
-				00D678A11ED5DB6000618F03 /* TodoTableViewController.swift */,
 				00D678A31ED5DB6000618F03 /* Main.storyboard */,
 				00D678A61ED5DB6000618F03 /* Assets.xcassets */,
 				00D678A81ED5DB6000618F03 /* LaunchScreen.storyboard */,
 				00D678AB1ED5DB6000618F03 /* Info.plist */,
-				00D678B51ED5DF6400618F03 /* TodoTableViewCell.swift */,
-				00D678B61ED5DF6400618F03 /* TodoTableViewCell.xib */,
-				00D678B91ED5F1B900618F03 /* Task.swift */,
-				00D678BD1ED5F50300618F03 /* TaskTableViewDataSource.swift */,
-				00D678C31ED60A4100618F03 /* TasksInteractor.swift */,
-				003FFF3D1ED83C3E0067FA94 /* TaskDetailViewController.swift */,
-				003FFF3E1ED83C3E0067FA94 /* TaskDetailViewController.xib */,
 			);
 			path = TodoApp;
 			sourceTree = "<group>";
