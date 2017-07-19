@@ -54,6 +54,17 @@ class TaskInteractor {
         }
     }
     
+    func deleteTask(_ task: Task) {
+        
+        if let identifier = task.identifier {
+            NetworkManager.shared.DELETE(urlString: (NetworkConstants.DELETE_TASKS_OPERATION + "/" + String(identifier)),
+                                         params: [:],
+                                         successHandler: nil) { (error) in
+                //TODO: undone delete task and show error
+            }
+        }
+    }
+    
     func addTask(_ task: Task, successHandler: @escaping (Task) -> (), errorHandler: @escaping (Error) -> ()) {
         
         NetworkManager.shared.POST(urlString: NetworkConstants.REGISTER_TASKS_OPERATION,

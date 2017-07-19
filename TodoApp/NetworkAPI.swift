@@ -54,6 +54,20 @@ class NetworkAPI: NetworkClient {
                                          errorHandler: errorHandler)
     }
     
+    func DELETE(urlString: String,
+                params: [String: Any],
+                successHandler: SuccessHandler?,
+                errorHandler: ErrorHandler?){
+        
+        self.performRequestWithURLString(urlString: urlString,
+                                         params: nil,
+                                         httpHeaders: nil,
+                                         httpMethod: "DELETE",
+                                         successHandler: successHandler,
+                                         errorHandler: errorHandler)
+        
+    }
+    
     
     private func performRequestWithURLString(urlString: String,
                                              params: [String: Any]?,

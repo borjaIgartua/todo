@@ -23,15 +23,25 @@ class TodoTableViewController: UITableViewController {
         //automatic height
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44
-        
+
         
         taskDataSource = TaskTableViewDataSource(tableView: self.tableView,
                                                  dataSource: [],
                                                  updateTaskHandler: { [weak interactor = self.taskInteractor] (task) in
-                                                    
                                                     interactor?.updateTask(task)
-            
+        }, deleteTaskHandler: { [weak interactor = self.taskInteractor] (task) in
+            interactor?.deleteTask(task)
         })
+        
+//        taskDataSource = TaskTableViewDataSource(tableView: self.tableView,
+//                                                 dataSource: [],
+//                                                 updateTaskHandler: { [weak interactor = self.taskInteractor] (task) in
+//                                                    
+//                                                    interactor?.updateTask(task)
+//                                                    
+//        }), deleteHandler: { (task) in
+//            
+//        })
         self.tableView.delegate = self
         
         taskInteractor.retrieveTasks { [unowned self] (tasks) in

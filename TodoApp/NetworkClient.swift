@@ -32,4 +32,9 @@ protocol NetworkClient {
               params: [String: Any],
               successHandler: SuccessHandler?,
               errorHandler: ErrorHandler?)
+    
+    func DELETE(urlString: String,
+                params: [String: Any],
+                successHandler: SuccessHandler?,
+                errorHandler: ErrorHandler?)
 }

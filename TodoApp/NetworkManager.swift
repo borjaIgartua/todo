@@ -56,4 +56,15 @@ class NetworkManager {
                                successHandler: successHandler,
                                errorHandler: errorHandler)
     }
+    
+    func DELETE(urlString: String,
+                params: [String: Any],
+                successHandler: SuccessHandler?,
+                errorHandler: ErrorHandler?){
+        
+        self.networkClient.DELETE(urlString: urlString,
+                                  params: params,
+                                  successHandler: successHandler,
+                                  errorHandler: errorHandler)
+    }
 }

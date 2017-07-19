@@ -33,6 +33,14 @@ class NetworkMock: NetworkClient {
         self.readFile(urlString, successHandler: successHandler, errorHandler: errorHandler)
     }
     
+    func DELETE(urlString: String,
+                params: [String: Any],
+                successHandler: SuccessHandler?,
+                errorHandler: ErrorHandler?){
+        
+        self.readFile(urlString, successHandler: successHandler, errorHandler: errorHandler)
+    }
+    
     
     func readFile(_ filename: String,
                   successHandler: SuccessHandler?,

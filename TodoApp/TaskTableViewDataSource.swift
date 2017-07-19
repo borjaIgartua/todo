@@ -14,11 +14,13 @@ class TaskTableViewDataSource: NSObject, UITableViewDataSource {
     
     typealias UpdateTaskHandler = (Task) -> ()
     var updateTaskHandler: UpdateTaskHandler?
+    var deleteTaskHandler: UpdateTaskHandler?
     
-    init(tableView: UITableView, dataSource: [Task], updateTaskHandler: UpdateTaskHandler? = nil) {
+    init(tableView: UITableView, dataSource: [Task], updateTaskHandler: UpdateTaskHandler? = nil, deleteTaskHandler: UpdateTaskHandler? = nil) {
         self.tableView = tableView
         self.dataSource = dataSource
         self.updateTaskHandler = updateTaskHandler
+        self.deleteTaskHandler = deleteTaskHandler
         super.init()
         
         self.tableView.dataSource = self
@@ -71,8 +73,10 @@ class TaskTableViewDataSource: NSObject, UITableViewDataSource {
         
         if editingStyle == UITableViewCellEditingStyle.delete {
             
+            let deletedTask = self.dataSource[indexPath.row]
             self.dataSource.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.middle)
+            deleteTaskHandler?(deletedTask)
         }
     }
     
