@@ -32,7 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             textField.isSecureTextEntry = true
         }
         
-        let addAction = UIAlertAction(title: "Login", style: .default) { [unowned self] (action) in
+        let addAction = UIAlertAction(title: "Login", style: .default) { (action) in
             
             if let username = alertController.textFields?[0].text, username.length > 0 {
                 if let password = alertController.textFields?[1].text, password.length > 0 {

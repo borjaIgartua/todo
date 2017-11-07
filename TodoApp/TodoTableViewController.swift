@@ -70,7 +70,7 @@ class TodoTableViewController: UITableViewController {
     
     //MARK: - Helpers
     
-    func addTask() {
+    @objc func addTask() {
         
         let alertController = UIAlertController(title: "Añadir nueva tarea", message: nil, preferredStyle: .alert)
         alertController.addTextField { (textField) in
@@ -116,7 +116,7 @@ class TodoTableViewController: UITableViewController {
         
     }
 
-    func makeTableEditable() {
+    @objc func makeTableEditable() {
         
         self.tableView.setEditing(!self.tableView.isEditing, animated: true)
         self.updateEditableButton(editing: self.tableView.isEditing)

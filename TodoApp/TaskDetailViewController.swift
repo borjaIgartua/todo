@@ -72,7 +72,7 @@ class TaskDetailViewController: UIViewController {
         self.navigationItem.setRightBarButton(barButton, animated: true)
     }
     
-    func makeTaskEditable() {
+    @objc func makeTaskEditable() {
         
         self.editingTask = !editingTask
         self.updateEditableButton(editing: editingTask)

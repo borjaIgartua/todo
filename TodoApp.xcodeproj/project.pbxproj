@@ -20,6 +20,10 @@
 		0048D7E61F1E0CF600C81C5E /* UIColor+Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7E51F1E0CF600C81C5E /* UIColor+Todo.swift */; };
 		0048D7E81F1E0E8700C81C5E /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7E71F1E0E8700C81C5E /* String+Utilities.swift */; };
 		0048D7EA1F1E6B4800C81C5E /* TaskDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048D7E91F1E6B4800C81C5E /* TaskDetailInteractor.swift */; };
+		005BD96B1F9D138100F06093 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BD96A1F9D138100F06093 /* login.json */; };
+		005BD96D1F9D13A400F06093 /* registerTask.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BD96C1F9D13A400F06093 /* registerTask.json */; };
+		005BD96F1F9D13C100F06093 /* updateTask.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BD96E1F9D13C100F06093 /* updateTask.json */; };
+		005BD9711F9D13D200F06093 /* deleteTask.json in Resources */ = {isa = PBXBuildFile; fileRef = 005BD9701F9D13D200F06093 /* deleteTask.json */; };
 		009110EF1F02638300DFE635 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009110EE1F02638300DFE635 /* NetworkClient.swift */; };
 		009110F11F02646D00DFE635 /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009110F01F02646D00DFE635 /* NetworkMock.swift */; };
 		009110F41F0269C300DFE635 /* tasks.json in Resources */ = {isa = PBXBuildFile; fileRef = 009110F31F0269C300DFE635 /* tasks.json */; };
@@ -52,6 +56,10 @@
 		0048D7E51F1E0CF600C81C5E /* UIColor+Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Todo.swift"; sourceTree = "<group>"; };
 		0048D7E71F1E0E8700C81C5E /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
 		0048D7E91F1E6B4800C81C5E /* TaskDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailInteractor.swift; sourceTree = "<group>"; };
+		005BD96A1F9D138100F06093 /* login.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
+		005BD96C1F9D13A400F06093 /* registerTask.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = registerTask.json; sourceTree = "<group>"; };
+		005BD96E1F9D13C100F06093 /* updateTask.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = updateTask.json; sourceTree = "<group>"; };
+		005BD9701F9D13D200F06093 /* deleteTask.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = deleteTask.json; sourceTree = "<group>"; };
 		009110EE1F02638300DFE635 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		009110F01F02646D00DFE635 /* NetworkMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
 		009110F31F0269C300DFE635 /* tasks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tasks.json; sourceTree = "<group>"; };
@@ -169,6 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				009110F31F0269C300DFE635 /* tasks.json */,
+				005BD96A1F9D138100F06093 /* login.json */,
+				005BD96C1F9D13A400F06093 /* registerTask.json */,
+				005BD96E1F9D13C100F06093 /* updateTask.json */,
+				005BD9701F9D13D200F06093 /* deleteTask.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -243,11 +255,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Borja Igartua Pastor";
 				TargetAttributes = {
 					00D6789B1ED5DB6000618F03 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 737QFM2WYD;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -276,11 +290,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				003FFF401ED83C3E0067FA94 /* TaskDetailViewController.xib in Resources */,
+				005BD96F1F9D13C100F06093 /* updateTask.json in Resources */,
 				00D678AA1ED5DB6000618F03 /* LaunchScreen.storyboard in Resources */,
+				005BD96D1F9D13A400F06093 /* registerTask.json in Resources */,
 				009110F41F0269C300DFE635 /* tasks.json in Resources */,
 				00D678A71ED5DB6000618F03 /* Assets.xcassets in Resources */,
 				00D678A51ED5DB6000618F03 /* Main.storyboard in Resources */,
+				005BD96B1F9D138100F06093 /* login.json in Resources */,
 				00D678B81ED5DF6400618F03 /* TodoTableViewCell.xib in Resources */,
+				005BD9711F9D13D200F06093 /* deleteTask.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +367,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -357,13 +377,19 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 737QFM2WYD;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -386,6 +412,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Debug;
 		};
@@ -399,7 +426,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -407,13 +436,19 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 737QFM2WYD;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -428,6 +463,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -436,11 +472,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 737QFM2WYD;
 				INFOPLIST_FILE = TodoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bi.example.TodoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -448,11 +486,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 737QFM2WYD;
 				INFOPLIST_FILE = TodoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bi.example.TodoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

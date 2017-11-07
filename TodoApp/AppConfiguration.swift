@@ -9,5 +9,5 @@
 import Foundation
 
 struct AppConfiguration {
-    static let SIMULATE_HTTP_CONEXIONS = false
+    static let SIMULATE_HTTP_CONEXIONS = true
 }

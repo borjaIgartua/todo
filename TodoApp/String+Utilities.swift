@@ -11,6 +11,6 @@ import Foundation
 extension String {
     
     var length: Int {
-        return self.characters.count
+        return self.count //before swift 4 -> self.characters.count
     }
 }
